@@ -274,7 +274,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   .page-home .grid { grid-template-columns: minmax(0, 0.45fr) minmax(0, 3fr); column-gap: clamp(24px, 3vw, 48px); }
   .page-home .section { padding-block: clamp(20px, 6vh, 72px) clamp(12px, 3vh, 40px); }
   .page-home .body { max-width: 62rem; }
-  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); margin-bottom: clamp(0.7em, 2vh, 1.1em); max-width: 50rem; }
+  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); margin-bottom: clamp(0.7em, 2vh, 1.1em); }
   .page-home .body > p:not(.lead), .page-home .list li { font-size: 0.95rem; line-height: 1.6; }
   .page-home .subhead { margin: clamp(1rem, 5vh, 3rem) 0 clamp(0.6em, 2vh, 1.2em); }
   .page-home .list { margin-bottom: 0; }
