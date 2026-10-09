@@ -3,8 +3,9 @@
   document.documentElement.classList.add('js');
 
   // Footer year
-  var year = document.getElementById('year');
-  if (year) year.textContent = new Date().getFullYear();
+  document.querySelectorAll('.year').forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
 
   // Top bar border once scrolled
   var topbar = document.querySelector('.topbar');
@@ -21,31 +22,7 @@
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   }
   toggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
-  nav.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { setMenu(false); });
-  });
-
-  // Underline the nav link for the section in view
-  var links = {};
-  nav.querySelectorAll('a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-  var sections = Object.keys(links)
-    .map(function (id) { return document.getElementById(id); })
-    .filter(Boolean);
-
-  function setActive() {
-    var line = window.innerHeight * 0.35;
-    var current = sections[0].id;
-    sections.forEach(function (s) {
-      if (s.getBoundingClientRect().top <= line) current = s.id;
-    });
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
-      current = sections[sections.length - 1].id;
-    }
-    Object.keys(links).forEach(function (id) { links[id].classList.toggle('active', id === current); });
-  }
-  window.addEventListener('scroll', setActive, { passive: true });
-  window.addEventListener('resize', setActive);
-  setActive();
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
   // Gentle fade-in for paragraphs and lists below the first screen
   var items = document.querySelectorAll('.body > p, .body > ul, .body > h3, .group');
