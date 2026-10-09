@@ -3,7 +3,7 @@
    left margin on wide screens and above the text on phones. */
 
 :root {
-  --black: #111111;
+  --black: #1d1d1d; /* matches the logo */
   --ink: #1c1c1c;
   --body: #333333;
   --grey: #767676;
@@ -58,13 +58,7 @@ strong { color: var(--ink); font-weight: 600; }
   font-size: 0.98rem; font-weight: 600; color: var(--ink);
   text-decoration: none;
 }
-.mark {
-  display: inline-grid; place-items: center;
-  width: 28px; height: 28px;
-  background: var(--black); color: var(--paper);
-  font-size: 0.95rem; font-weight: 400; line-height: 1;
-  padding-bottom: 2px;
-}
+.mark { display: block; width: 30px; height: 30px; }
 
 .nav { display: flex; gap: 2rem; }
 .nav a {
@@ -93,12 +87,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
 
 /* ---------- Hero ---------- */
 .hero { padding-top: clamp(150px, 22vh, 230px); padding-bottom: clamp(48px, 7vw, 88px); }
-.hero h1 {
-  font-size: clamp(3rem, 9vw, 7rem);
-  letter-spacing: -0.035em;
-  line-height: 1;
-  margin-bottom: 1.25rem;
-}
+.hero-logo { margin-bottom: 1.75rem; line-height: 0; }
+.hero-logo img { display: block; width: clamp(140px, 18vw, 200px); height: auto; max-width: 100%; }
 .tagline {
   font-size: clamp(1.2rem, 2.3vw, 1.7rem);
   font-weight: 300;
@@ -247,23 +237,3 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
 
 /* Expertise heading sits at the top of its section */
 .subhead--first { margin-top: 0.45em; }
-
-/* Commercial due diligence track record */
-.dd { margin: 1.6em 0 0; }
-.dd-row {
-  display: grid;
-  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
-  column-gap: 1.75rem;
-  padding-block: 1.1em;
-  border-top: 1px solid var(--line);
-}
-.dd-row:last-child { border-bottom: 1px solid var(--line); }
-.dd dt { font-size: 0.92rem; font-weight: 600; color: var(--ink); line-height: 1.45; }
-.dd dd { margin: 0; min-width: 0; }
-.assets { list-style: none; padding: 0; margin: 0; font-size: 0.94rem; }
-.assets li { margin-bottom: 0.3em; }
-.assets li:last-child { margin-bottom: 0; }
-
-@media (max-width: 560px) {
-  .dd-row { grid-template-columns: minmax(0, 1fr); row-gap: 0.6em; }
-}
