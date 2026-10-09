@@ -25,7 +25,7 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
   // Gentle fade-in for paragraphs and lists below the first screen
-  var items = document.querySelectorAll('.body > p, .body > ul, .body > h3, .group');
+  var items = document.querySelectorAll('.body > p, .body > ul, .body > h3, .group h4, .card');
   if (!('IntersectionObserver' in window)) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
