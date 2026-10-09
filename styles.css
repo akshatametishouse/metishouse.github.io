@@ -57,6 +57,8 @@ h1, h2, h3, h4 { margin: 0; color: var(--ink); font-weight: 600; line-height: 1.
 p { margin: 0; }
 a { color: inherit; }
 strong { color: var(--ink); font-weight: 600; }
+em { font-style: italic; }
+button, input, select, textarea { font: inherit; } /* form controls don't inherit the font by default */
 .nowrap { white-space: nowrap; }
 
 .wrap, .topbar-inner { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
