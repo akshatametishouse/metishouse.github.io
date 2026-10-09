@@ -15,7 +15,7 @@
   /* Layout */
   --gutter: clamp(20px, 4.5vw, 64px);
   --max: 1320px;
-  --side: 150px;       /* left column: Experience menu, otherwise empty */
+  --side: 150px;       /* empty left column that indents body text */
   --col-gap: 40px;
   --bar: 64px;
 
@@ -126,17 +126,6 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
 .body { min-width: 0; max-width: 64rem; }
 .group h4 + .cards { margin-top: var(--s-1); }
 
-.subnav {
-  position: sticky;
-  top: calc(var(--bar) + var(--s-4));
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-2);
-  font-size: var(--t-small);
-  line-height: 1.4;
-}
-.subnav a { color: var(--grey); text-decoration: none; transition: color .2s; }
-.subnav a:hover { color: var(--ink); }
 
 /* Text rhythm inside a page:
    s-1  label → its list
@@ -288,12 +277,4 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   .side:empty { display: none; }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .card { padding: var(--s-3) var(--s-3) var(--s-4); }
-  .subnav {
-    position: static;
-    flex-direction: row; flex-wrap: wrap;
-    gap: var(--s-1) var(--s-3);
-    padding-bottom: var(--s-3);
-    margin-bottom: var(--s-4);
-    border-bottom: 1px solid var(--line);
-  }
 }
