@@ -260,3 +260,74 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   .page-contact .nav { background: var(--black); border-bottom-color: #2c2c2c; }
   .page-contact .nav a, .page-contact .nav a.active { border-bottom-color: #2c2c2c; }
 }
+
+/* ---------- Home: fits one laptop screen ---------- */
+.page-home { min-height: 100vh; display: flex; flex-direction: column; }
+.page-home .site-footer { border-top-color: transparent; padding-block: 0 20px; }
+
+.home {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 64px;
+}
+.home-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  column-gap: clamp(40px, 6vw, 104px);
+  align-items: center;
+  padding-block: clamp(20px, 4vh, 48px);
+}
+
+.home-intro h1 {
+  font-size: clamp(3rem, min(5.6vw, 11vh), 5.75rem);
+  white-space: nowrap;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  margin-bottom: 0.9rem;
+}
+.home-intro .tagline { margin-bottom: clamp(1.25rem, 3.5vh, 2.25rem); }
+.home-lead {
+  font-size: clamp(1.05rem, min(1.45vw, 2.4vh), 1.25rem);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 34rem;
+  margin-bottom: 1em;
+}
+.home-text { font-size: 0.95rem; max-width: 34rem; margin: 0; }
+
+.home-suited {
+  border-left: 1px solid var(--black);
+  padding-left: clamp(28px, 3.5vw, 56px);
+}
+.home-suited h2 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: clamp(0.75rem, 2vh, 1.25rem);
+}
+.home-suited ul { list-style: none; padding: 0; margin: 0; }
+.home-suited li {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  padding-block: clamp(0.7rem, 1.9vh, 1.1rem);
+  border-top: 1px solid var(--line);
+}
+.home-suited li:last-child { border-bottom: 1px solid var(--line); }
+.home-suited strong { font-weight: 600; }
+
+/* Short laptop screens */
+@media (min-width: 961px) and (max-height: 760px) {
+  .home-text, .home-suited li { font-size: 0.88rem; line-height: 1.5; }
+}
+
+/* Tablets and phones: stack and scroll normally */
+@media (max-width: 960px) {
+  .home { align-items: flex-start; padding-top: 64px; }
+  .home-grid { grid-template-columns: minmax(0, 1fr); row-gap: 48px; padding-block: 72px 56px; }
+  .home-suited { border-left: 0; padding-left: 0; border-top: 1px solid var(--black); padding-top: 28px; }
+  .home-intro h1 { font-size: clamp(2.8rem, 12vw, 5rem); }
+}
