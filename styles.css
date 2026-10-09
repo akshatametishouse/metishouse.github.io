@@ -261,35 +261,50 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   .page-contact .nav a, .page-contact .nav a.active { border-bottom-color: #2c2c2c; }
 }
 
-/* ---------- Home: same look, spacing tightened to fit one laptop screen ---------- */
+/* ---------- Home: one screen on laptops ----------
+   Spacing scale (grows with screen height):
+   --gap-xs  heading to tagline, list heading to list
+   --gap-sm  intro to proof line (read as one unit), between list items
+   --gap-md  either side of the rule (equal)
+   --gap-lg  before the "most suited for" list (the main break) */
 .page-home { min-height: 100vh; display: flex; flex-direction: column; }
 .page-home main { flex: 1; }
 .page-home .site-footer { display: none; }
 
+/* Phones and tablets: same rhythm, fixed sizes */
+.page-home { --gap-xs: 10px; --gap-sm: 12px; --gap-md: 40px; --gap-lg: 52px; }
+.page-home .hero { padding-bottom: var(--gap-md); }
+.page-home .hero h1 { margin-bottom: var(--gap-xs); }
+.page-home .section { padding-block: var(--gap-md) 56px; }
+.page-home .body p { margin: 0; }
+.page-home .lead + p { margin-top: var(--gap-sm); }
+.page-home .subhead { margin: var(--gap-lg) 0 var(--gap-xs); }
+.page-home .list { margin: 0; }
+.page-home .list--suited li { margin: 0; }
+.page-home .list--suited li + li { margin-top: var(--gap-sm); }
+
+/* Laptops: gaps grow with screen height so Home fills one screen */
 @media (min-width: 821px) {
-  .page-home .hero { padding-top: calc(64px + clamp(16px, 7vh, 88px)); padding-bottom: clamp(16px, 4vh, 48px); }
-  .page-home .hero h1 { font-size: clamp(3rem, min(7vw, 10vh), 6rem); margin-bottom: 0.7rem; }
-  .page-home .tagline { font-size: clamp(1.1rem, min(2vw, 2.9vh), 1.55rem); max-width: none; }
+  .page-home {
+    --gap-xs: clamp(8px, 1.4vh, 14px);
+    --gap-sm: clamp(8px, 1.6vh, 16px);
+    --gap-md: clamp(28px, 6vh, 64px);
+    --gap-lg: clamp(40px, 9vh, 104px);
+  }
   .page-home .wrap { max-width: 1240px; }
   .page-home .grid { grid-template-columns: minmax(0, 0.45fr) minmax(0, 3fr); column-gap: clamp(24px, 3vw, 48px); }
-  .page-home .section { padding-block: clamp(20px, 6vh, 72px) clamp(12px, 3vh, 40px); }
   .page-home .body { max-width: 62rem; }
-  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); margin-bottom: clamp(0.7em, 2vh, 1.1em); }
+
+  .page-home .hero { padding-top: calc(64px + clamp(24px, 9vh, 104px)); }
+  .page-home .hero h1 { font-size: clamp(2.6rem, min(7vw, 10vh), 6rem); }
+  .page-home .tagline { font-size: clamp(1.1rem, min(2vw, 2.9vh), 1.55rem); max-width: none; }
+
+  .page-home .section { padding-block: var(--gap-md) 0; }
+  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); line-height: 1.5; }
   .page-home .body > p:not(.lead), .page-home .list li { font-size: 0.95rem; line-height: 1.6; }
-  .page-home .subhead { margin: clamp(1rem, 5vh, 3rem) 0 clamp(0.6em, 2vh, 1.2em); }
-  .page-home .list { margin-bottom: 0; }
-  .page-home .list--suited li { margin-bottom: clamp(0.45em, 2.2vh, 1.2em); }
 }
 
-/* Short laptop screens: trim spacing, keep type sizes */
-@media (min-width: 821px) and (max-height: 700px) {
-  .page-home .hero { padding-top: calc(64px + 3vh); padding-bottom: 3vh; }
-  .page-home .section { padding-block: 3.5vh 1vh; }
-  .page-home .subhead { margin: 3vh 0 1.2vh; }
-  .page-home .list--suited li { margin-bottom: 1.1vh; }
-  .page-home .lead { margin-bottom: 1.6vh; }
-}
+/* Very short laptop screens: slightly smaller heading */
 @media (min-width: 821px) and (max-height: 640px) {
-  .page-home .hero h1 { font-size: clamp(2.6rem, 9.5vh, 5rem); }
-  .page-home .body > p:not(.lead), .page-home .list li { line-height: 1.5; }
+  .page-home .hero h1 { font-size: clamp(2.4rem, 9vh, 4.5rem); }
 }
