@@ -14,7 +14,7 @@
 
   /* Layout */
   --gutter: clamp(20px, 4.5vw, 64px);
-  --max: 1320px;
+  --max: 1480px;
   --side: 150px;       /* empty left column that indents body text */
   --col-gap: 40px;
   --bar: 64px;
@@ -123,7 +123,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   grid-template-columns: var(--side) minmax(0, 1fr);
   column-gap: var(--col-gap);
 }
-.body { min-width: 0; max-width: 64rem; }
+.body { min-width: 0; max-width: 72rem; }
 .group h4 + .cards { margin-top: var(--s-1); }
 
 
@@ -245,7 +245,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
   .page-home .hero h1 { font-size: clamp(2.6rem, min(5.2vw, 8.5vh), 4.25rem); }
   .page-home .tagline { font-size: clamp(1.1rem, min(1.6vw, 2.6vh), 1.375rem); }
   .page-home .section { padding-block: var(--gap-md) 0; }
-  .page-home .body > .lead { font-size: clamp(1.05rem, min(1.45vw, 2.4vh), 1.25rem); }
+  .page-home .body > .lead { font-size: clamp(1.05rem, min(1.4vw, 2.4vh), 1.16rem); }
 }
 
 /* ---------- Tablets and phones ---------- */
