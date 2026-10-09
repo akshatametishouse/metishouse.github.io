@@ -267,26 +267,29 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
 .page-home .site-footer { display: none; }
 
 @media (min-width: 821px) {
-  .page-home .hero { padding-top: calc(64px + clamp(16px, 5vh, 64px)); padding-bottom: clamp(16px, 3.2vh, 40px); }
+  .page-home .hero { padding-top: calc(64px + clamp(16px, 7vh, 88px)); padding-bottom: clamp(16px, 4vh, 48px); }
   .page-home .hero h1 { font-size: clamp(3rem, min(7vw, 10vh), 6rem); margin-bottom: 0.7rem; }
   .page-home .tagline { font-size: clamp(1.1rem, min(2vw, 2.9vh), 1.55rem); max-width: none; }
-  .page-home .grid { grid-template-columns: minmax(120px, 0.8fr) minmax(0, 3fr); }
-  .page-home .section { padding-block: clamp(18px, 3.8vh, 48px) clamp(12px, 2.5vh, 32px); }
-  .page-home .body { max-width: 46rem; }
-  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); margin-bottom: 0.8em; }
+  .page-home .wrap { max-width: 1240px; }
+  .page-home .grid { grid-template-columns: minmax(0, 0.45fr) minmax(0, 3fr); column-gap: clamp(24px, 3vw, 48px); }
+  .page-home .section { padding-block: clamp(20px, 6vh, 72px) clamp(12px, 3vh, 40px); }
+  .page-home .body { max-width: 62rem; }
+  .page-home .lead { font-size: clamp(1.02rem, min(1.6vw, 2.5vh), 1.3rem); margin-bottom: clamp(0.7em, 2vh, 1.1em); max-width: 50rem; }
   .page-home .body > p:not(.lead), .page-home .list li { font-size: 0.95rem; line-height: 1.6; }
-  .page-home .subhead { margin: clamp(0.9rem, 3vh, 2rem) 0 0.65em; }
+  .page-home .subhead { margin: clamp(1rem, 5vh, 3rem) 0 clamp(0.6em, 2vh, 1.2em); }
   .page-home .list { margin-bottom: 0; }
-  .page-home .list--suited li { margin-bottom: clamp(0.35em, 1vh, 0.7em); }
+  .page-home .list--suited li { margin-bottom: clamp(0.45em, 2.2vh, 1.2em); }
 }
 
-/* Short laptop screens */
+/* Short laptop screens: trim spacing, keep type sizes */
 @media (min-width: 821px) and (max-height: 700px) {
-  .page-home .body > p:not(.lead), .page-home .list li { font-size: 0.9rem; line-height: 1.5; }
-  .page-home .lead { font-size: 1rem; line-height: 1.5; }
-  .page-home .hero h1 { font-size: clamp(2.6rem, 9vh, 5rem); }
-  .page-home .hero { padding-top: calc(64px + 14px); padding-bottom: 14px; }
-  .page-home .section { padding-block: 16px 8px; }
-  .page-home .subhead { margin: 0.8rem 0 0.5em; }
-  .page-home .list--suited li { margin-bottom: 0.3em; }
+  .page-home .hero { padding-top: calc(64px + 3vh); padding-bottom: 3vh; }
+  .page-home .section { padding-block: 3.5vh 1vh; }
+  .page-home .subhead { margin: 3vh 0 1.2vh; }
+  .page-home .list--suited li { margin-bottom: 1.1vh; }
+  .page-home .lead { margin-bottom: 1.6vh; }
+}
+@media (min-width: 821px) and (max-height: 640px) {
+  .page-home .hero h1 { font-size: clamp(2.6rem, 9.5vh, 5rem); }
+  .page-home .body > p:not(.lead), .page-home .list li { line-height: 1.5; }
 }
