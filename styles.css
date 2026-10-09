@@ -244,3 +244,26 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--black); outline
 }
 
 .nowrap { white-space: nowrap; }
+
+/* Expertise heading sits at the top of its section */
+.subhead--first { margin-top: 0.45em; }
+
+/* Commercial due diligence track record */
+.dd { margin: 1.6em 0 0; }
+.dd-row {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  column-gap: 1.75rem;
+  padding-block: 1.1em;
+  border-top: 1px solid var(--line);
+}
+.dd-row:last-child { border-bottom: 1px solid var(--line); }
+.dd dt { font-size: 0.92rem; font-weight: 600; color: var(--ink); line-height: 1.45; }
+.dd dd { margin: 0; min-width: 0; }
+.assets { list-style: none; padding: 0; margin: 0; font-size: 0.94rem; }
+.assets li { margin-bottom: 0.3em; }
+.assets li:last-child { margin-bottom: 0; }
+
+@media (max-width: 560px) {
+  .dd-row { grid-template-columns: minmax(0, 1fr); row-gap: 0.6em; }
+}
